@@ -1,0 +1,78 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+.typingtext{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.typingtext .wrapper{
+    display: inline-flex;
+}
+
+.typingtext .wrapper .static-txt{
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.typingtext .wrapper .dynamic-txt{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.typingtext .wrapper .dynamic-txt li{
+    color: red;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top:0;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+    
+}
+
+.dynamic-txt li span{
+    position: relative;
+}
+
+.dynamic-txt li span::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    border-left: 2px solid red;
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+        40%, 60%{
+            left: calc(100% + 30px);
+        }
+        100%{
+            left: 0;
+        }
+        }
+    
